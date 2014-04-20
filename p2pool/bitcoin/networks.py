@@ -822,7 +822,7 @@ nets = dict(
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
         DUST_THRESHOLD=0.03e8,
-    ),
+    ), 
 
     leafcoin_test=math.Object(
         P2P_PREFIX='bbaaaaaa'.decode('hex'), #pchmessagestart
