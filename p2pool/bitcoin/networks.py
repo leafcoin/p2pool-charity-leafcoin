@@ -824,7 +824,7 @@ nets = dict(
         DUST_THRESHOLD=0.03e8,
     ), 
 
-    leafcoin_test=math.Object(
+    leafcoin_testnet=math.Object(
         P2P_PREFIX='bbaaaaaa'.decode('hex'), #pchmessagestart
         P2P_PORT=33813,
         ADDRESS_VERSION=111, #pubkey_address
