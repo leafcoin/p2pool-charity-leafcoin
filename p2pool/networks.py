@@ -682,7 +682,7 @@ nets = dict(
         VERSION_CHECK=lambda v: 80602 <= v,
         VERSION_WARNING=lambda v: 'Upgrade KittehCoin to >= 0.8.6.2!' if v < 80602 else None,
     ),
-    leafcoin=math.Object(
+    leafcoin=math.Object( 
         PARENT=networks.nets['leafcoin'],
         SHARE_PERIOD=10, # seconds target spacing
         CHAIN_LENGTH=12*60*60//10, # shares
