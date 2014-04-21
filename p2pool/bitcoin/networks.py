@@ -831,12 +831,12 @@ nets = dict(
         RPC_PORT=33812,
         RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             'leafcoinaddress' in (yield bitcoind.rpc_help()) and
-            not (yield bitcoind.rpc_getinfo())['testnet']
+            (yield bitcoind.rpc_getinfo())['testnet']
         )),
         SUBSIDY_FUNC=lambda height: 100000*100000000,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         BLOCK_PERIOD=60, # s
-        SYMBOL='LEAF',
+        SYMBOL='tLEAF',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'LeafCoin') 
 		if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/Leafcoin/') 
 		if platform.system() == 'Darwin' else os.path.expanduser('~/.leafcoin'), 'leafcoin.conf'),
